@@ -1,5 +1,5 @@
 import React from 'react';
-import '../tasks.style.css';
+import '../todos.style.css';
 import useTodoStore from '../../../stores/todos/todos.store';
 
 const TODOHero = () => {

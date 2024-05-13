@@ -1,6 +1,6 @@
 import React from 'react';
 import useTodoStore from '../../../stores/todos/todos.store';
-import '../tasks.style.css';
+import '../todos.style.css';
 
 const Item = ({ item }) => {
   const { markTodoCompleted, deleteTodo, setDialog } = useTodoStore(

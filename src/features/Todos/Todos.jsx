@@ -3,9 +3,9 @@ import TODOHero from './components/TodoHero';
 import TODOList from './components/TodoList';
 import EditTodoModal from '../../components/dialog/EditTodoModal';
 import useTodoStore from '../../stores/todos/todos.store';
-import './tasks.style.css';
+import './todos.style.css';
 
-const Tasks = () => {
+const Todos = () => {
   const dialog = useTodoStore((state) => state.dialog);
   return (
     <div className="tasks">
@@ -16,4 +16,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
+export default Todos;
