@@ -1,0 +1,71 @@
+.tasks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.todohero_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-self: center;
+  width: 90%;
+  max-width: 500px;
+  padding: 12px;
+}
+.todohero_section div:last-child {
+  background-color: #88ab33;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.todo_list {
+  align-self: center;
+  width: 97%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 27px;
+  margin-bottom: 27px;
+  gap: 27px;
+}
+
+.todo_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  max-width: 455px;
+  border: 1px solid #c2b39a;
+  font-size: 16px;
+  background-color: #fff;
+  color: #000;
+  padding: 12px;
+}
+
+.todo_items_left,
+.todo_items_right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.action {
+  cursor: pointer;
+}
+
+.icon {
+  max-width: 20px;
+  width: 100%;
+}

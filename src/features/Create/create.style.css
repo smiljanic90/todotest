@@ -1,0 +1,33 @@
+.create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form label {
+  width: 100%;
+}
+
+.form input {
+  padding: 20px 10px;
+  width: 100%;
+  background-color: aliceblue;
+  color: #2c3e50;
+  border: none;
+  box-shadow: none;
+  border-radius: 50px;
+  font-size: 18px;
+  text-indent: 20px;
+}
