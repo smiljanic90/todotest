@@ -2,9 +2,11 @@ import React from 'react';
 import Button from '../../components/button/Button';
 import './create.style.css';
 import useTodoStore from '../../stores/todos/todos.store';
+import useNotificationStore from '../../stores/notification/notification.store';
 
 const Create = () => {
   const addTodo = useTodoStore((state) => state.addTodo);
+  const setNotifcation = useNotificationStore((state) => state.setNotification);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,6 +19,7 @@ const Create = () => {
     };
 
     addTodo(newTodo);
+    setNotifcation(true, 'Task je uspješno kreiran!', 'success');
 
     event.target.reset();
   };

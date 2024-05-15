@@ -1,18 +1,27 @@
 import React from 'react';
 import useTodoStore from '../../../stores/todos/todos.store';
 import '../todos.style.css';
+import useNotificationStore from '../../../stores/notification/notification.store';
 
 const Item = ({ item }) => {
   const { markTodoCompleted, deleteTodo, setDialog } = useTodoStore(
     (state) => state
   );
+  const { setNotification } = useNotificationStore((state) => state);
 
   const completeTodo = () => {
     markTodoCompleted(item.id);
+    if (item.is_completed) {
+      setNotification(true, 'Task je označen kao nezavršen!', 'warning');
+      return;
+    } else {
+      setNotification(true, 'Task je uspješno završen!', 'info');
+    }
   };
 
   const handleDelete = () => {
     deleteTodo(item.id);
+    setNotification(true, 'Task je uspješno obrisan!', 'error');
   };
 
   return (
