@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './start.style.css';
+import './home.style.css';
 import Button from '../../components/button/Button';
 
-const Start = () => {
+const Home = () => {
   const router = useNavigate();
 
   const redirectToTODO = () => {
@@ -18,4 +18,4 @@ const Start = () => {
   );
 };
 
-export default Start;
+export default Home;

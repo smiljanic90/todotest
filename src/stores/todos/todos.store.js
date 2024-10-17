@@ -1,28 +1,36 @@
 import { create } from 'zustand';
 
-const useTodoStore = create((set) => ({
+const useTodoStore = create((set, get) => ({
   todos: [],
   dialog: {
     isOpen: false,
     item: null,
   },
-  addTodo: (newTodo) => set((state) => ({ todos: [...state.todos, newTodo] })),
-  markTodoCompleted: (id) =>
-    set((state) => ({
-      todos: state.todos.map((todo) =>
+  addTodo: (newTodo) => {
+    const todos = get().todos;
+    set({ todos: [...todos, newTodo] });
+  },
+  markTodoCompleted: (id) => {
+    const todos = get().todos;
+    set({
+      todos: todos.map((todo) =>
         todo.id === id ? { ...todo, is_completed: !todo.is_completed } : todo
       ),
-    })),
-  deleteTodo: (id) =>
-    set((state) => ({
-      todos: state.todos.filter((todo) => todo.id !== id),
-    })),
-  editTodo: (id, updatedTodo) =>
-    set((state) => ({
-      todos: state.todos.map((todo) =>
+    });
+  },
+  deleteTodo: (id) => {
+    const todos = get().todos;
+    set({ todos: todos.filter((todo) => todo.id !== id) });
+  },
+
+  editTodo: (id, updatedTodo) => {
+    const todos = get().todos;
+    set({
+      todos: todos.map((todo) =>
         todo.id === id ? { ...todo, ...updatedTodo } : todo
       ),
-    })),
+    });
+  },
   setDialog: (isOpen, item) => set({ dialog: { isOpen, item } }),
 }));
 
