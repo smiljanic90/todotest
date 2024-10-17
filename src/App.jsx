@@ -1,5 +1,5 @@
 import './App.css';
-import Todos from './features/Todos/Todos';
+import Todos from './features/Todos/List';
 import Create from './features/Create/Create';
 import About from './features/About/About';
 import Navigation from './features/Navigation/Navigation';
